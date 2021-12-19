@@ -1,5 +1,7 @@
 const DustLottery = artifacts.require("DustLottery");
 
-module.exports = function(deployer) {
-  deployer.deploy(DustLottery);
+let devAddr;
+module.exports = function(deployer, network, accounts) {
+    devAddr = accounts[0];
+    deployer.deploy(DustLottery, devAddr);
 };
